@@ -1,7 +1,7 @@
 jQuery(function($) {
-  var url = 'https://docs.google.com/spreadsheet/ccc?key=1js6ZGf7DNXStayPVZ-74mw3u-iKUQqGqz7mqerg86qE#gid=0'; 
+  var url = 'https://docs.google.com/spreadsheet/ccc?key=1DfWaAcYtJspSiPX7ambDJnXPUWHo7beAAQMjjsREFUQ#gid=0';
   var $el = $('.load-status');
-  $el.html('<h3>Loading <img src="http://assets.okfn.org/images/icons/ajaxload-circle.gif" /></h3>');
+  $el.html('<h3>Učitava <img src="http://assets.okfn.org/images/icons/ajaxload-circle.gif" /></h3>');
   var tmpl = $('#our-template').html();
   recline.Backend.GDocs.fetch({url: url})
     .done(function(results) {
