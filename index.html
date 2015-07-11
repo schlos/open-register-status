@@ -85,7 +85,7 @@
   Link: 
   {{#dataurl}}
   <a href="{{dataurl}}">Zahtjev za pravo na pristup informacijama</a>
-  ({{dataformat}}{{^dataformat}}Unknown format{{/dataformat}})
+  ({{dataformat}}{{^dataformat}}Nepoznat format{{/dataformat}})
   {{/dataurl}}
   {{^dataurl}}
   <strong>Još nemamo link</strong>
@@ -95,7 +95,7 @@
   &ndash; <a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a>
 </p>
 <div class="progress">
-  <div class="bar bar-{{progressbarcolor}}" style="width: {{progress}}%;" title="učinjeno do sada {{progress}}%"></div>
+  <div class="bar bar-{{progressbar}}" style="width: {{progress}}%;" title="učinjeno do sada {{progress}}%"></div>
 </div>
 
 <dl class="dl-horizontal more-info" style="display: none;">
@@ -110,13 +110,13 @@
     Opis
   </dt>
   <dd>
-  {{{description}}}
+    {{{description}}}
   </dd>
   <dt>
     Vlasnik podataka
   </dt>
   <dd>
-  {{place}}
+    {{place}}
   </dd>
   <dt>
     Zadatak
@@ -128,7 +128,7 @@
     Status
   </dt>
   <dd>
-    <span class="label label-{{statuslabelcolor}}">{{statustext}}</span>
+    <span class="label label-{{statuslabel}}">{{statustext}}</span>
   </dd>
   <dt>
     Bilješke
