@@ -40,7 +40,7 @@
       <div class="load-status"></div>
     </div>
     <div class="span4">
-        <p><a href="#" class="btn btn-large btn-success">Unos podataka &raquo;</a></p>
+      <p><a href="https://docs.google.com/spreadsheets/d/1js6ZGf7DNXStayPVZ-74mw3u-iKUQqGqz7mqerg86qE/edit#gid=1461432757" class="source-url btn btn-large btn-success">Unos podataka (za volontere) &raquo;</a></p>
     </div>
   </div>
 
@@ -69,9 +69,9 @@
 {{#records}}
 <div class="{{divclass}}">
 <div class="record">
-  <h3>
-    {{title}}
-  </h3>
+  <{{size}}>
+    {{id}}. {{title}}
+  </{{size}}>
 
   <div class="owners">
     {{#owners}}<img class="gravatar thumbnail" title="Nositelj {{name}}" src="{{gravatar}}" />{{/owners}}
@@ -88,9 +88,7 @@
   ({{dataformat}}{{^dataformat}}Nepoznat format{{/dataformat}})
   {{/dataurl}}
   {{^dataurl}}
-  <strong>Još nemamo link</strong>
-  {{/dataurl}}
-  <strong>Potrebno je pronaći i napisati!</strong>
+  <strong>Netko treba pronaći link i napisati u tablicu</strong>
   {{/dataurl}}
   &ndash; <a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a>
 </p>
@@ -100,23 +98,23 @@
 
 <dl class="dl-horizontal more-info" style="display: none;">
   <dt>
-    {{dataformat}}{{^dataformat}}Nepoznato{{/dataformat}}
+    {{dataformat}}{{^dataformat}}Nemamo{{/dataformat}} link
   </dt>
   <dd>
-    {{#dataurl}}{{dataurl}}{{/dataurl}}
+    {{#dataurl}}<a href="{{dataurl}}">Zahtjev za pravo na pristup informacijama</a>{{/dataurl}}
     {{^dataurl}}&nbsp;{{/dataurl}}
   </dd>
   <dt>
-    Opis
+    Detalji
   </dt>
   <dd>
-    {{{description}}}
+  {{{description}}}
   </dd>
   <dt>
     Vlasnik podataka
   </dt>
   <dd>
-    {{place}}
+  {{place}}
   </dd>
   <dt>
     Zadatak
@@ -148,8 +146,8 @@
     <h3>To je odlično! Evo kako možeš započeti&hellip;</h3>
   </div>
   <div class="modal-body">
-    <p>Prvo - otvori <a href="#" class="source-url" target="_blank">ovu google tablicu</a> i napiši svoje ime pod 'owners'.</p>
-    <p>Zatim - počni slati zahtjeve za pristup informacijama! Imamo <a href="http://imamopravoznati.org/help/requesting" target="_blank">detaljni vodič</a> koji će ti pomoći a tu je i <a href="http://diskurs.open.hr/t/prioritetni-skupovi-podataka-za-data-gov-hr/22" target="_blank">prijateljska zajednica na Open Diskurs formu koja će rado razgovarati s tobom i pomoći</a>.</p>
+    <p>Prvo - otvori <a href="https://docs.google.com/spreadsheets/d/1js6ZGf7DNXStayPVZ-74mw3u-iKUQqGqz7mqerg86qE/edit#gid=1461432757" class="source-url" target="_blank">ovu google tablicu</a>, otvori stranicu 'Volonteri - zadaci' i pod 'Ime volontera' napiši svoje ime te popuni ostala polja sa statusom zadatka.</p>
+    <p>Zatim - počni slati zahtjeve za pristup informacijama! Imamo <a href="http://imamopravoznati.org/help/requesting" target="_blank">detaljni vodič</a> koji će ti pomoći a tu je i <a href="http://diskurs.open.hr/t/prioritetni-skupovi-podataka-za-data-gov-hr/22" target="_blank">prijateljska zajednica na Open Diskurs forumu</a> koja će rado razgovarati s tobom i pomoći.</p>
   </div>
 </div>
 </script>
