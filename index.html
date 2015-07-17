@@ -77,8 +77,10 @@
     {{#owners}}<img class="gravatar thumbnail" title="Nositelj {{name}}" src="{{gravatar}}" />{{/owners}}
 
     {{^owners}}
-    <a href="https://docs.google.com/forms/d/14HZcFywwGXz60xtaW_RVOV_xURtfnTqlwLFky16jHsA/viewform?entry.2050804129={{title}}&entry.202676410&entry.1953481127" class="btn btn-large btn-primary take-it-on">Nemamo čovjeka na ovome &ndash; preuzmi ti &raquo;</a> <a href="" class="btn btn-large btn-primary take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Informacije o ovome &raquo;</a>
+    <a href="" class="btn btn-large btn-primary take-it-on">Nemamo čovjeka na ovome &ndash; preuzmi ti &raquo;</a> <a href="" class="btn btn-large btn-primary take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Informacije o ovome &raquo;</a>
     {{/owners}}
+    {{#formurl}}<a href="{{formurl}}">Zahtjev za pravo na pristup informacijama</a>{{/formurl}}
+    {{^formurl}}&nbsp;{{/formurl}}
   </div>
 
 <p class="data-source">
