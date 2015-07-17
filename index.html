@@ -82,8 +82,9 @@
     {{^formurl}}&nbsp;{{/formurl}}
     {{/owners}}
   </div>
-
+  
 <p class="data-source">
+  {{#owners}}
   Link: 
   {{#dataurl}}{{#typeofdata}}<a href="{{dataurl}}">{{typeofdata}}</a>{{/typeofdata}}
   ({{dataformat}}{{^dataformat}}Nepoznat format{{/dataformat}})
@@ -93,6 +94,7 @@
   <strong>Treba napisati link u tablicu</strong>
   {{/dataurl}}
   &ndash; <a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a>
+  {{^owners}}&nbsp;{{/owners}}
 </p>
 <div class="progress">
   <div class="bar bar-{{progressbar}}" style="width: {{progress}}%;" title="učinjeno do sada {{progress}}%"></div>
