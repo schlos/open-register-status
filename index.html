@@ -88,11 +88,11 @@
   Link: 
   {{#typeofdata}}<a href="{{dataurl}}">{{typeofdata}}</a>{{/typeofdata}}
   ({{dataformat}}{{^dataformat}}Nepoznat format{{/dataformat}})
-  {{^typeofdata}}&nbsp;{{/typeofdata}}
+  {{^typeofdata}}&nbsp;{{/typeofdata}} &ndash; 
   {{/dataurl}}
   {{^dataurl}}
   <strong>&nbsp;</strong>
-  &ndash; {{/dataurl}}<a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a>
+  {{/dataurl}}<a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a>
 </p>
 <div class="progress">
   <div class="bar bar-{{progressbar}}" style="width: {{progress}}%;" title="učinjeno do sada {{progress}}%"></div>
