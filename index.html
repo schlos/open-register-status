@@ -92,8 +92,7 @@
   {{/dataurl}}
   {{^dataurl}}
   <strong>&nbsp;</strong>
-  {{/dataurl}}
-  &ndash; <a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a>
+  &ndash; {{/dataurl}}<a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a>
 </p>
 <div class="progress">
   <div class="bar bar-{{progressbar}}" style="width: {{progress}}%;" title="učinjeno do sada {{progress}}%"></div>
@@ -101,13 +100,17 @@
 
 <dl class="dl-horizontal more-info" style="display: none;">
   <dt>
-    {{dataformat}}{{^dataformat}}Nemamo{{/dataformat}} link
+    Link
   </dt>
   <dd>
+    {{#owners}}
     {{#dataurl}}{{#typeofdata}}<a href="{{dataurl}}">{{typeofdata}}</a>{{/typeofdata}}
   ({{dataformat}}{{^dataformat}}&nbsp;{{/dataformat}})
   {{^typeofdata}}&nbsp;{{/typeofdata}}{{/dataurl}}
     {{^dataurl}}&nbsp;{{/dataurl}}
+    {{/owners}}
+  {{^owners}}
+  <strong>Još nitko nije preuzeo ovaj zadatak...</strong>{{/owners}}
   </dd>
   <dt>
     Detalji
