@@ -77,7 +77,9 @@
     {{#owners}}<img class="gravatar thumbnail" title="Nositelj {{name}}" src="{{gravatar}}" />{{/owners}}
 
     {{^owners}}
-    <a href="" class="btn btn-large btn-primary take-it-on">Nemamo čovjeka na ovome &ndash; preuzmi ti &raquo;</a> <a href="" class="btn btn-large btn-primary take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Informacije o ovome &raquo;</a>
+    <a href="" class="btn btn-large btn-info take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Kako mogu pomoći?</a>
+    {{#formurl}}<a href="{{formurl}}" class="btn btn-large btn-success take-it-on">Nemamo čovjeka na ovom zahtjevu &ndash; klikni i preuzmi &raquo;</a>{{/formurl}}
+    {{^formurl}}&nbsp;{{/formurl}}
     {{/owners}}
     {{#formurl}}<a href="{{formurl}}">Zahtjev za pravo na pristup informacijama</a>{{/formurl}}
     {{^formurl}}&nbsp;{{/formurl}}
