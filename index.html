@@ -85,12 +85,12 @@
 
 <p class="data-source">
   Link: 
-  {{#dataurl}}
-  <a href="{{dataurl}}">Zahtjev za pravo na pristup informacijama</a>
+  {{#dataurl}}{{#typeofdata}}<a href="{{dataurl}}">{{typeofdata}}</a>{{/typeofdata}}
   ({{dataformat}}{{^dataformat}}Nepoznat format{{/dataformat}})
+  {{^typeofdata}}&nbsp;{{/typeofdata}}
   {{/dataurl}}
   {{^dataurl}}
-  <strong>Netko treba pronaći link i napisati u tablicu</strong>
+  <strong>Treba napisati link u tablicu</strong>
   {{/dataurl}}
   &ndash; <a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a>
 </p>
@@ -103,7 +103,9 @@
     {{dataformat}}{{^dataformat}}Nemamo{{/dataformat}} link
   </dt>
   <dd>
-    {{#dataurl}}<a href="{{dataurl}}">Zahtjev za pravo na pristup informacijama</a>{{/dataurl}}
+    {{#dataurl}}{{#typeofdata}}<a href="{{dataurl}}">{{typeofdata}}</a>{{/typeofdata}}
+  ({{dataformat}}{{^dataformat}}&nbsp;{{/dataformat}})
+  {{^typeofdata}}&nbsp;{{/typeofdata}}{{/dataurl}}
     {{^dataurl}}&nbsp;{{/dataurl}}
   </dd>
   <dt>
@@ -145,11 +147,11 @@
 <div class="modal hide fade" id="take-it-on-modal">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3>To je odlično! Evo kako možeš započeti&hellip;</h3>
+    <h3>Evo kako možeš započeti&hellip;</h3>
   </div>
   <div class="modal-body">
-    <p>Prvo - otvori <a href="https://docs.google.com/spreadsheets/d/1js6ZGf7DNXStayPVZ-74mw3u-iKUQqGqz7mqerg86qE/edit#gid=1461432757" class="source-url" target="_blank">ovu google tablicu</a>, otvori stranicu 'Volonteri - zadaci' i pod 'Ime volontera' napiši svoje ime te popuni ostala polja sa statusom zadatka.</p>
-    <p>Zatim - počni slati zahtjeve za pristup informacijama! Imamo <a href="http://imamopravoznati.org/help/requesting" target="_blank">detaljni vodič</a> koji će ti pomoći a tu je i <a href="http://diskurs.open.hr/t/prioritetni-skupovi-podataka-za-data-gov-hr/22" target="_blank">prijateljska zajednica na Open Diskurs forumu</a> koja će rado razgovarati s tobom i pomoći.</p>
+    <p>Prvo - klikni tipku da preuzmeš pojedini zadatak. Možeš se prijaviti na više od jednog zadatka. Zatim će ti netko iz tima poslati email s uputama.</p>
+    <p>Zatim - počni slati zahtjeve za pristup informacijama! Imamo <a href="http://imamopravoznati.org/help/requesting" target="_blank">detaljni vodič</a> koji će ti pomoći a tu je i <a href="http://diskurs.open.hr/c/imamo-pravo-znati" target="_blank">prijateljska zajednica na Open Diskurs forumu</a> koja će rado razgovarati s tobom i pomoći. Možeš pogledati i što drugi žele da se otvori na forum postu <a href="http://diskurs.open.hr/t/prioritetni-skupovi-podataka-za-data-gov-hr/22" target="_blank">Prioritetni skupovi podataka</a>.</p>
   </div>
 </div>
 </script>
