@@ -37,14 +37,14 @@
 *:first-child + html .goog-inline-block {
   display: inline;
 }
-body {
+/* body {
   color: #333333;
   font: normal normal 400 14px 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   margin: 0;
   line-height: 1.2;
   padding: 0 1em;
   background-color: white;
-}
+
 input,
 textarea {
   outline: none;
@@ -52,7 +52,7 @@ textarea {
 .container {
   margin: 0 auto;
   width: 960px;
-}
+} } */
 .ss-logo-link {
   display: block;
 }
@@ -103,10 +103,10 @@ textarea {
 .form-error-arg {
   font-weight: bold;
 }
-h1 {
+/* h1 {
   font-size: 1.8em;
   padding: 0;
-}
+} 
 hr {
   border: 0;
   height: 1px;
@@ -120,7 +120,7 @@ textarea {
 }
 br {
   display: block !important;
-}
+} */
 .aria-only-help {
   font-size: 0;
   left: -9999px;

@@ -31,7 +31,7 @@
 <body>
 <div class="container">
 <div class="content">
-  <div class="page-header">
+  <div class="page-header" id="page-top">
     <h1>
       Status otvaranja skupova podataka u RH
       <a href="http://data.gov.hr" style="float: right;"><img src="http://2.bp.blogspot.com/-4-pEEA94Jg8/UsBqV2VvLGI/AAAAAAAAFcw/XhC4fHZdGVI/s1600/Open_Data.png" style="height: 50px; margin-top: -5px;" alt="" /></a>
@@ -44,7 +44,7 @@
       <div class="load-status"></div>
     </div>
     <div class="span4">
-      <p><a href="https://docs.google.com/spreadsheets/d/1js6ZGf7DNXStayPVZ-74mw3u-iKUQqGqz7mqerg86qE/edit#gid=1461432757" class="source-url btn btn-large btn-success">Unos podataka (za volontere) &raquo;</a></p>
+      <p><a href="" class="btn btn-large btn-info take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Kako mogu pomoći?</a></p>
     </div>
   </div>
 
@@ -81,15 +81,13 @@
     {{#owners}}<img class="gravatar thumbnail" title="Nositelj {{name}}" src="{{gravatar}}" />{{/owners}}
 
     {{^owners}}
-    <a href="" class="btn btn-large btn-info take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Kako mogu pomoći?</a>
-    {{#formurl}}<a href="" class="btn btn-large btn-success take-it-on" data-toggle="modal" data-target="#new-application-modal">Nemamo čovjeka na ovom zahtjevu &ndash; klikni i preuzmi &raquo;</a>{{/formurl}}
+   
+    {{#formurl}}<a href="" class="btn btn-large btn-success take-it-on" data-toggle="modal" data-target="#new-application-modal-{{id}}">Nemamo čovjeka na ovom zahtjevu &ndash; klikni i preuzmi &raquo;</a>{{/formurl}}
     {{^formurl}}&nbsp;{{/formurl}}
     {{/owners}}
   </div>
 
-<!-- Modal for Google Forms - START -->
-
-<div class="modal hide fade" id="new-application-modal">
+<div class="modal hide fade" id="new-application-modal-{{id}}">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
     <h3>Reci nam koji zadatak želiš&hellip;</h3>
@@ -101,7 +99,7 @@
 <label class="ss-q-item-label" for="entry_2050804129"><div class="ss-q-title">Naziv skupa podataka
 <label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label></div>
 <p class="muted">Automatski ispunjeno</p></label>
-<input type="text" name="entry.2050804129" value="{{size}}" class="ss-q-short" id="entry_2050804129" dir="auto" aria-label="" aria-required="true" required="" title="" disabled>
+<input type="text" name="entry.2050804129" value="{{title}}" class="ss-q-short" id="entry_2050804129" dir="auto" aria-label="" aria-required="true" required="" title="" disabled>
 <div class="error-message" id="1597539825_errorMessage"></div>
 </div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
 <div dir="auto" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
@@ -142,8 +140,6 @@
   </div>
 </div>
 
-<!-- Modal for Google Forms - END -->
-
   
 <p class="data-source">
   {{#dataurl}}
@@ -154,7 +150,7 @@
   {{/dataurl}}
   {{^dataurl}}
   <strong>&nbsp;</strong>
-  {{/dataurl}}<a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a>
+  {{/dataurl}}<a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a> &ndash; <i class="icon-chevron-up"></i> Idi na vrh</a>
 </p>
 <div class="progress">
   <div class="bar bar-{{progressbar}}" style="width: {{progress}}%;" title="učinjeno do sada {{progress}}%"></div>
@@ -172,7 +168,7 @@
     {{^dataurl}}&nbsp;{{/dataurl}}
     {{/owners}}
   {{^owners}}
-  <strong>Još nitko nije preuzeo ovaj zadatak...</strong>{{/owners}}
+  <strong>Još nitko nije preuzeo ovaj zadatak... <a href="" class="take-it-on" data-toggle="modal" data-target="#new-application-modal-{{id}}">Preuzmi ti!</a></strong>{{/owners}}
   </dd>
   <dt>
     Detalji
@@ -196,7 +192,12 @@
     Status
   </dt>
   <dd>
-    <span class="label label-{{statuslabel}}">{{statustext}}</span>
+    <span class="label label-{{statuslabel}}">{{statustext}}</span>&nbsp;
+    {{#owners}}
+    <a href="" class="btn btn-link take-it-on" data-toggle="modal" data-target="#update-status-modal-{{id}}">Ažuriraj status &raquo;</a>
+    {{/owners}}
+  {{^owners}}
+  &nbsp;{{/owners}}
   </dd>
   <dt>
     Bilješke
@@ -207,6 +208,78 @@
 </dl>
 </div>
 </div>
+
+<div class="modal hide fade" id="update-status-modal-{{id}}">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Ažuriraj status PPI zahtjeva &hellip;</h3>
+  </div>
+  <div class="modal-body">
+<form action="https://docs.google.com/forms/d/1o7XwtkJBxF5_7Lw4_D4IJRFr-Ga3OXZY6rViDnYfU9Y/formResponse" method="POST" id="ss-form" target="_self" onsubmit=""><ol role="list" class="ss-question-list" style="padding-left: 0">
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_511013334"><div class="ss-q-title">R.br.
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<p class="muted">Automatski ispunjeno</p></label>
+<input type="text" name="entry.511013334" value="{{id}}" class="ss-q-short" id="entry_511013334" dir="auto" aria-label="R.br. Automatski ispunjeno " aria-required="true" required="" title="" disabled>
+<div class="error-message" id="339060708_errorMessage"></div>
+</div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1650450090"><div class="ss-q-title">Naziv skupa podataka
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label></div>
+<p class="muted">Automatski ispunjeno</p></label>
+<input type="text" name="entry.1650450090" value="{{title}}" class="ss-q-short" id="entry_1650450090" dir="auto" aria-label="Naziv skupa podataka Automatski ispunjeno " aria-required="true" required="" title="" disabled>
+<div class="error-message" id="1661731098_errorMessage"></div>
+</div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1748553657"><div class="ss-q-title">Tvoja email adresa
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<p class="muted">Potrebno ispuniti email radi autorizacije unosa</p></label>
+<input type="text" name="entry.1748553657" value="" class="ss-q-short" id="entry_1748553657" dir="auto" aria-label="E-mail adresa podnositelja Potrebno ispuniti radi autorizacije unosa " aria-required="true" required="" title="">
+<div class="error-message" id="1160189533_errorMessage"></div>
+</div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_2109552753"><div class="ss-q-title">Status ovog zahtjeva
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+<ul class="ss-choices" role="radiogroup" aria-label="Status ovog zahtjeva  "><li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1433866329" value="Preuzeo/la sam zadatak" id="group_1433866329_1" role="radio" class="ss-q-radio" aria-label="Preuzeo/la sam zadatak" required="" aria-required="true"></span>
+<span class="ss-choice-label">Preuzeo/la sam zadatak</span>
+</label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1433866329" value="Poslao/la sam zahtjev" id="group_1433866329_2" role="radio" class="ss-q-radio" aria-label="Poslao/la sam zahtjev" required="" aria-required="true"></span>
+<span class="ss-choice-label">Poslao/la sam zahtjev</span>
+</label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1433866329" value="Odgovorio/la sam na zahtjev za dopunom" id="group_1433866329_3" role="radio" class="ss-q-radio" aria-label="Odgovorio/la sam na zahtjev za dopunom" required="" aria-required="true"></span>
+<span class="ss-choice-label">Odgovorio/la sam na zahtjev za dopunom</span>
+</label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1433866329" value="Odgovorio/la sam na njihovu poruku" id="group_1433866329_4" role="radio" class="ss-q-radio" aria-label="Odgovorio/la sam na njihovu poruku" required="" aria-required="true"></span>
+<span class="ss-choice-label">Odgovorio/la sam na njihovu poruku</span>
+</label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1433866329" value="Stigao je odgovor s tra&#382;enim informacijama" id="group_1433866329_5" role="radio" class="ss-q-radio" aria-label="Stigao je odgovor s tra&#382;enim informacijama" required="" aria-required="true"></span>
+<span class="ss-choice-label">Stigao je odgovor s traženim informacijama</span>
+</label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1433866329" value="Stigao je odgovor - ne raspola&#382;u tra&#382;enim informacijama" id="group_1433866329_6" role="radio" class="ss-q-radio" aria-label="Stigao je odgovor - ne raspola&#382;u tra&#382;enim informacijama" required="" aria-required="true"></span>
+<span class="ss-choice-label">Stigao je odgovor - ne raspolažu traženim informacijama</span>
+</label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1433866329" value="Stigao je odgovor - odbili su pristup tra&#382;enim informacijama" id="group_1433866329_7" role="radio" class="ss-q-radio" aria-label="Stigao je odgovor - odbili su pristup tra&#382;enim informacijama" required="" aria-required="true"></span>
+<span class="ss-choice-label">Stigao je odgovor - odbili su pristup traženim informacijama</span>
+</label></li></ul>
+<div class="error-message" id="2109552753_errorMessage"></div>
+</div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1791473712"><div class="ss-q-title">Link na moj zahtjev
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label></div>
+<div class="ss-q-help ss-secondary-text" dir="auto">Ovdje umetnite URL link iz vašeg browsera na ImamoPravoZnati.org stranicu sa sadržajem zahtjeva</div></label>
+<input type="text" name="entry.1791473712" value="" class="ss-q-short" id="entry_1791473712" dir="auto" aria-label="Link na moj zahtjev Ovdje umetnite URL link iz vašeg browsera na Imamo pravo znati stranicu sa sadržajem zahtjeva " aria-required="true" required="" title="">
+<div class="error-message" id="621603989_errorMessage"></div>
+</div></div></div>
+<input type="hidden" name="draftResponse" value="[,,&quot;-6513127454605180467&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+
+
+<input type="hidden" name="fbzx" value="-6513127454605180467">
+
+<div class="ss-item ss-navigate"><table id="navigation-table"><tbody><tr><td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+<input type="submit" name="submit" value="Submit" id="ss-submit" class="jfk-button jfk-button-action "></td>
+</tr></tbody></table></div></ol></form></div>
+  </div>
+</div>
+
 {{/records}}
 </script>
 
