@@ -81,8 +81,8 @@
     {{#owners}}<img class="gravatar thumbnail" title="Nositelj {{name}}" src="{{gravatar}}" />{{/owners}}
 
     {{^owners}}
-    <a href="" class="btn btn-large btn-info take-it-on" data-toggle="modal" data-target="#new-application-modal">PRIJAVA Kako mogu pomoći?</a>
-    {{#formurl}}<a href="{{formurl}}" target="_blank" class="btn btn-large btn-success take-it-on">Nemamo čovjeka na ovom zahtjevu &ndash; klikni i preuzmi &raquo;</a>{{/formurl}}
+    <a href="" class="btn btn-large btn-info take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Kako mogu pomoći?</a>
+    {{#formurl}}<a href="" class="btn btn-large btn-info take-it-on" data-toggle="modal" data-target="#new-application-modal">Nemamo čovjeka na ovom zahtjevu &ndash; klikni i preuzmi &raquo;</a>{{/formurl}}
     {{^formurl}}&nbsp;{{/formurl}}
     {{/owners}}
   </div>
@@ -92,41 +92,35 @@
 <div class="modal hide fade" id="new-application-modal">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3>Evo kako možeš započeti&hellip;</h3>
+    <h3>Reci nam koji zadatak želiš&hellip;</h3>
   </div>
   <div class="modal-body">
 <form action="https://docs.google.com/forms/d/14HZcFywwGXz60xtaW_RVOV_xURtfnTqlwLFky16jHsA/formResponse" method="POST" id="ss-form" target="_self" onsubmit=""><ol role="list" class="ss-question-list" style="padding-left: 0">
 <div class="ss-form-question errorbox-good" role="listitem">
 <div dir="auto" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
 <label class="ss-q-item-label" for="entry_2050804129"><div class="ss-q-title">Naziv skupa podataka
-<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"><span class="ss-required-asterisk" aria-hidden="true">*</span></label></div>
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label></div>
 <div class="ss-q-help ss-secondary-text" dir="auto">Napiši naziv skupa podataka (registra ili baze podataka) kojeg usvajate, u obliku kako piše na stranici, bez rednog broja.</div></label>
-<input type="text" name="entry.2050804129" value="" class="ss-q-short" id="entry_2050804129" dir="auto" aria-label="Naziv skupa podataka Napiši naziv skupa podataka (registra ili baze podataka) kojeg usvajate, u obliku kako piše na stranici, bez rednog broja. " aria-required="true" required="" title="">
+<input type="text" name="entry.2050804129" value="NAZIV" class="ss-q-short" id="entry_2050804129" dir="auto" aria-label="Naziv skupa podataka Napiši naziv skupa podataka (registra ili baze podataka) kojeg usvajate, u obliku kako piše na stranici, bez rednog broja. " aria-required="true" required="" title="">
 <div class="error-message" id="1597539825_errorMessage"></div>
-<div class="required-message">Odgovor na ovo pitanje je obavezno</div>
 </div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
 <div dir="auto" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
 <label class="ss-q-item-label" for="entry_202676410"><div class="ss-q-title">Vaše ime i prezime
-<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
-<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label></div>
 <div class="ss-q-help ss-secondary-text" dir="auto">Podatak koji ovdje upišete biti će prikazan javno na stranici</div></label>
 <input type="text" name="entry.202676410" value="" class="ss-q-short" id="entry_202676410" dir="auto" aria-label="Vaše ime i prezime Podatak koji ovdje upišete biti će prikazan javno na stranici " aria-required="true" required="" title="">
 <div class="error-message" id="2106179725_errorMessage"></div>
-<div class="required-message">This is a required question</div>
 </div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
 <div dir="auto" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
 <label class="ss-q-item-label" for="entry_1953481127"><div class="ss-q-title">Vaša email adresa
-<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
-<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label></div>
 <div class="ss-q-help ss-secondary-text" dir="auto">Email neće biti prikazan na webu, služi za kontaktiranje s timom koji radi na ovom projektu</div></label>
 <input type="text" name="entry.1953481127" value="" class="ss-q-short" id="entry_1953481127" dir="auto" aria-label="Vaša email adresa Email neće biti prikazan na webu, služi za kontaktiranje s timom koji radi na ovom projektu " aria-required="true" required="" title="">
 <div class="error-message" id="591119536_errorMessage"></div>
-<div class="required-message">This is a required question</div>
 </div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
 <div dir="auto" class="ss-item ss-item-required ss-radio"><div class="ss-form-entry">
 <label class="ss-q-item-label" for="entry_1332373309"><div class="ss-q-title">Pristajem da moji podaci budu dostupni sudionicima na projektu
-<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
-<span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label></div>
 <div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
 
 <ul class="ss-choices" role="radiogroup" aria-label="Pristajem da moji podaci budu dostupni sudionicima na projektu  "><li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1012059450" value="Da" id="group_1012059450_1" role="radio" class="ss-q-radio" aria-label="Da" required="" aria-required="true"></span>
@@ -134,8 +128,7 @@
 </label></li> <li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1012059450" value="Ne" id="group_1012059450_2" role="radio" class="ss-q-radio" aria-label="Ne" required="" aria-required="true"></span>
 <span class="ss-choice-label">Ne</span>
 </label></li></ul>
-<div class="error-message" id="1332373309_errorMessage"></div>
-<div class="required-message">This is a required question</div></div></div></div>
+<div class="error-message" id="1332373309_errorMessage"></div></div></div></div>
 <input type="hidden" name="draftResponse" value="[,,&quot;2956533120210554519&quot;]
 ">
 <input type="hidden" name="pageHistory" value="0">
@@ -145,8 +138,7 @@
 
 <div class="ss-item ss-navigate"><table id="navigation-table"><tbody><tr><td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
 <input type="submit" name="submit" value="Submit" id="ss-submit" class="jfk-button jfk-button-action ">
-<div class="ss-password-warning ss-secondary-text">Never submit passwords through Google Forms.</div></td>
-</tr></tbody></table></div></ol></form>
+</td></tr></tbody></table></div></ol></form>
   </div>
 </div>
 
