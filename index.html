@@ -74,7 +74,7 @@
 <div class="{{divclass}}">
 <div class="record">
   <{{size}}>
-    <a href="" class="js-more-info" title="Klikni za informacije o {{title}}">{{id}}. {{title}}</a>
+    <a href="" class="js-more-info" title="Klikni za informacije o {{title}}">{{id}}. {{title}}</a>{{^owners}}&nbsp;<span class="label label-{{statuslabel}}">{{statustext}}</span>{{/owners}}
   </{{size}}>
 
   <div class="owners">
@@ -171,30 +171,34 @@
   <strong>Još nitko nije preuzeo ovaj zadatak... <a href="" class="take-it-on" data-toggle="modal" data-target="#new-application-modal-{{id}}">Preuzmi ti!</a></strong>{{/owners}}
   </dd>
   <dt>
-    Detalji
-  </dt>
-  <dd>
-  {{{description}}}
-  </dd>
-  <dt>
     Vlasnik podataka
   </dt>
   <dd>
   {{place}}
   </dd>
   <dt>
-    Zadatak
+    {{#validipz}}
+    Status zahtjeva
+    {{/validipz}}
   </dt>
   <dd>
-    {{workneeded}}
+    {{#validipz}}
+    {{ipzstatustext}} &nbsp; <a href="{{ipzupdatelink}}" class="btn btn-link">Ažuriraj status zahtjeva &raquo;</a>
+    {{/validipz}}
   </dd>
   <dt>
-    Status
+    Status zahtjeva
   </dt>
   <dd>
-    <span class="label label-{{statuslabel}}">{{statustext}}</span>&nbsp;
+    -----{{workneeded}}------
+  </dd>
+  <dt>
+    Status zahtjeva
+  </dt>
+  <dd>
+    <span class="label label-{{statuslabel}}">{{statustext}}</span>
     {{#owners}}
-    <a href="" class="btn btn-link take-it-on" data-toggle="modal" data-target="#update-status-modal-{{id}}">Ažuriraj status &raquo;</a>
+    &nbsp;<a href="" class="btn btn-link take-it-on" data-toggle="modal" data-target="#update-status-modal-{{id}}">Ažuriraj status &raquo;</a>
     {{/owners}}
   {{^owners}}
   &nbsp;{{/owners}}
