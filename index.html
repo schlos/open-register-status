@@ -183,32 +183,21 @@
   <dd>
   {{place}}
   </dd>
+  {{#validipz}}
   <dt>
-    {{#validipz}}
     Status zahtjeva
-    {{/validipz}}
   </dt>
   <dd>
-    {{#validipz}}
     {{ipzstatustext}}&nbsp;<a href="{{ipzupdatelink}}" target="_blank">Ažuriraj status zahtjeva &raquo;</a>
-    {{/validipz}}
   </dd>
   <dt>
     Datum zahtjeva
   </dt>
   <dd>
-    {{requestdate}}&nbsp;<span class="label label-{{period}}">{{statustext}}</span>
-  </dd>
-  <dt>
-    Status zahtjeva
-  </dt>
-  <dd>
-    <span class="label label-{{statuslabel}}">{{statustext}}</span>
-    {{#owners}}
-    &nbsp;<a href="" class="btn btn-link take-it-on" data-toggle="modal" data-target="#update-status-modal-{{id}}">Ažuriraj status &raquo;</a>
-    {{/owners}}
-  {{^owners}}
-  &nbsp;{{/owners}}
+    {{requestdate}}
+    {{#iscompleted}}
+    &nbsp;<span class="label label-{{statuslabel}}">{{period}} dana</span>
+    {{/iscompleted}}
   </dd>
   <dt>
     Bilješke
@@ -216,6 +205,7 @@
   <dd>
     {{{notes}}}
   </dd>
+  {{/validipz}}
 </dl>
 </div>
 </div>
