@@ -159,10 +159,11 @@
   <strong>&nbsp;</strong>
   {{/dataurl}}<a href="#" class="js-more-info" title="Klikni da pokaže (sakrije) dodatne informacije"><i class="icon-info-sign"></i> Više info</a> <a href="#page-top" title="Idi na vrh stranice"><i class="icon-chevron-up"></i> Idi na vrh</a>
 </p>
+{{^owners}}
 <div class="progress">
   <div class="bar bar-{{progressbar}}" style="width: {{progress}}%;" title="učinjeno do sada {{progress}}%"></div>
 </div>
-
+{{/owners}}
 <dl class="dl-horizontal more-info" style="display: none;">
   <dt>
     Link
@@ -188,7 +189,10 @@
     Status zahtjeva
   </dt>
   <dd>
-    {{ipzstatustext}}&nbsp;<a href="{{ipzupdatelink}}" target="_blank">Ažuriraj status zahtjeva &raquo;</a>
+    {{ipzstatustext}}
+    {{^iscompleted}}
+    &nbsp;<a href="{{ipzupdatelink}}" target="_blank">Ažuriraj status zahtjeva &raquo;</a>
+    {{/iscompleted}}
   </dd>
   <dt>
     Datum zahtjeva
@@ -199,12 +203,14 @@
     &nbsp;<span class="label label-{{statuslabel}}">{{period}} dana</span>
     {{/iscompleted}}
   </dd>
+  {{#notes}}
   <dt>
     Bilješke
   </dt>
   <dd>
     {{{notes}}}
   </dd>
+  {{/notes}}
   {{/validipz}}
   {{^validipz}}
   {{#dataurl}}
@@ -214,7 +220,9 @@
   <dd>
     <span class="label label-{{statuslabel}}">{{statustext}}</span>
     {{#owners}}
+    {{^iscompleted}}
     &nbsp;<a href="" class="btn btn-link take-it-on" data-toggle="modal" data-target="#update-status-modal-{{id}}">Ažuriraj status &raquo;</a>
+    {{/iscompleted}}
     {{/owners}}
   </dd>
   {{/dataurl}}
@@ -303,8 +311,14 @@
     <h3>Evo kako možeš započeti&hellip;</h3>
   </div>
   <div class="modal-body">
-    <p>Prvo - klikni tipku da preuzmeš pojedini zadatak. Možeš se prijaviti na više od jednog zadatka. Zatim će ti netko iz tima poslati email s uputama.</p>
-    <p>Zatim - počni slati zahtjeve za pristup informacijama! Imamo <a href="http://imamopravoznati.org/help/requesting" target="_blank">detaljni vodič</a> koji će ti pomoći a tu je i <a href="http://diskurs.open.hr/c/imamo-pravo-znati" target="_blank">prijateljska zajednica na Open Diskurs forumu</a> koja će rado razgovarati s tobom i pomoći. Možeš pogledati i što drugi žele da se otvori na forum postu <a href="http://diskurs.open.hr/t/prioritetni-skupovi-podataka-za-data-gov-hr/22" target="_blank">Prioritetni skupovi podataka</a>.</p>
+    <p>Prvo - klikni tipku da preuzmeš brigu o pojedinom zahtjevu za otvaranje nekog registra. Možeš se prijaviti na više od jednog zadatka. Zatim će ti netko iz tima poslati email s uputama - u međuvremenu, upoznaj se detaljnije o otvaranju javnih podataka: imamo <a href="http://imamopravoznati.org/help/requesting" target="_blank">detaljni vodič</a> koji će ti pomoći a tu je i <a href="http://diskurs.open.hr/c/imamo-pravo-znati" target="_blank">prijateljska zajednica na Open Diskurs forumu</a> koja će rado razgovarati s tobom i pomoći savjetom kada je potrebno. Možeš pogledati koje skupve podatka su drugi žele da se objave u otvorenom obliku na postu <a href="http://diskurs.open.hr/t/prioritetni-skupovi-podataka-za-data-gov-hr/22" target="_blank">Prioritetni skupovi podataka</a>.</p>
+    <p>Zatim - počni slati zahtjeve za pristup informacijama!</p><br>
+    <p>Tvoj zadatak nakon što se zapišses za neki skup podataka uključujue:</p>
+    <ol>
+      <li>1) Slanje unaprijed sastavljenih zahtjeva</li>
+      <li>2) Odgovaranje na zahtjeve za dopunu, slanje požurnica kada nema odgovora i podsjetnik na zakonske rokove</li>
+      <li>3) Čekanje odgovora, ažuriranje statusa zadatka</li>
+    </ol>
   </div>
 </div>
 </script>
