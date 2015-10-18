@@ -151,7 +151,7 @@
 <p class="data-source">
   {{#dataurl}}
   Link: 
-  {{#typeofdata}}<a href="{{dataurl}}">{{typeofdata}}</a>{{/typeofdata}}
+  {{#typeofdata}}<a href="{{dataurl}}" target="_blank">{{typeofdata}}</a>{{/typeofdata}}
   ({{dataformat}}{{^dataformat}}Nepoznat format{{/dataformat}})
   {{^typeofdata}}&nbsp;{{/typeofdata}} &ndash; 
   {{/dataurl}}
@@ -170,13 +170,13 @@
   </dt>
   <dd>
     {{#owners}}
-    {{#dataurl}}{{#typeofdata}}<a href="{{dataurl}}">{{typeofdata}}</a>{{/typeofdata}}
+    {{#dataurl}}{{#typeofdata}}<a href="{{dataurl}}" target="_blank">{{typeofdata}}</a>{{/typeofdata}}
   ({{dataformat}}{{^dataformat}}&nbsp;{{/dataformat}})
   {{^typeofdata}}&nbsp;{{/typeofdata}}{{/dataurl}}
     {{^dataurl}}&nbsp;{{/dataurl}}
     {{/owners}}
   {{^owners}}
-  <strong>Još nitko nije preuzeo ovaj zadatak... <a href="" class="take-it-on" data-toggle="modal" data-target="#new-application-modal-{{id}}">Preuzmi ti!</a></strong>{{/owners}}
+  <strong>Još nitko nije preuzeo ovaj zadatak... <a href="" class="take-it-on" data-toggle="modal" data-target="#new-application-modal-{{id}}">Preuzmi ti!</a> Ili pročitaj <a href="" class="take-it-on" data-toggle="modal" data-target="#take-it-on-modal">više o tome</a>.</strong>{{/owners}}
   </dd>
   <dt>
     Vlasnik podataka
@@ -313,11 +313,11 @@
   <div class="modal-body">
     <p>Prvo - klikni tipku da preuzmeš brigu o pojedinom zahtjevu za otvaranje nekog registra. Možeš se prijaviti na više od jednog zadatka. Zatim će ti netko iz tima poslati email s uputama - u međuvremenu, upoznaj se detaljnije o otvaranju javnih podataka: imamo <a href="http://imamopravoznati.org/help/requesting" target="_blank">detaljni vodič</a> koji će ti pomoći a tu je i <a href="http://diskurs.open.hr/c/imamo-pravo-znati" target="_blank">prijateljska zajednica na Open Diskurs forumu</a> koja će rado razgovarati s tobom i pomoći savjetom kada je potrebno. Možeš pogledati koje skupve podatka su drugi žele da se objave u otvorenom obliku na postu <a href="http://diskurs.open.hr/t/prioritetni-skupovi-podataka-za-data-gov-hr/22" target="_blank">Prioritetni skupovi podataka</a>.</p>
     <p>Zatim - počni slati zahtjeve za pristup informacijama!</p><br>
-    <p>Tvoj zadatak nakon što se zapišses za neki skup podataka uključujue:</p>
+    <p>Tvoj zadatak nakon što se zapišeš za neki skup podataka uključujue:</p>
     <ol>
-      <li>1) Slanje unaprijed sastavljenih zahtjeva</li>
-      <li>2) Odgovaranje na zahtjeve za dopunu, slanje požurnica kada nema odgovora i podsjetnik na zakonske rokove</li>
-      <li>3) Čekanje odgovora, ažuriranje statusa zadatka</li>
+      <li>Slanje unaprijed sastavljenih zahtjeva</li>
+      <li>Odgovaranje na zahtjeve za dopunu, slanje požurnica kada nema odgovora i podsjetnik na zakonske rokove</li>
+      <li>Čekanje odgovora, ažuriranje statusa zadatka</li>
     </ol>
   </div>
 </div>
