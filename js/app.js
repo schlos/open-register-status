@@ -1,5 +1,5 @@
 jQuery(function($) {
-  var url = 'https://docs.google.com/spreadsheet/ccc?key=1js6ZGf7DNXStayPVZ-74mw3u-iKUQqGqz7mqerg86qE#gid=0';
+  var url = 'https://docs.google.com/spreadsheet/ccc?key=1xyRk6nd9piGTWsrGKXUqNajfO9YjBGfNzrmsb2aC6Lo#gid=0';
   var $el = $('.load-status');
   $el.html('<h3>Učitavanje <img src="http://assets.okfn.org/images/icons/ajaxload-circle.gif" /></h3>');
   var tmpl = $('#our-template').html();
