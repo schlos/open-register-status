@@ -1,8 +1,6 @@
 jQuery(function($) {
   var url = 'https://docs.google.com/spreadsheet/ccc?key=1xyRk6nd9piGTWsrGKXUqNajfO9YjBGfNzrmsb2aC6Lo#gid=2067272081';
-  var $el = $('.load-status');
-  $el.html('<h3>Učitavanje <img src="http://assets.okfn.org/images/icons/ajaxload-circle.gif" /></h3>');
-  var tmpl = $('#our-template').html();
+  var tmpl = $('#stat-template').html();
   recline.Backend.GDocs.fetch({url: url})
     .done(function(results) {
       // take off first row as it is instructions
